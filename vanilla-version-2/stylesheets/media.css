@@ -1,0 +1,21 @@
+
+@media(min-width: 700px)  {
+    .nation-display .nation-name {
+        font-size: 1.0rem;
+        font-weight: normal;
+    }
+}
+
+@media(min-width: 1000px)  {
+    .nation-display .nation-name {
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+}
+
+@media(min-width: 1900px)  {
+    .nation-display .nation-name {
+        font-size: 2rem;
+        font-weight: bolder;
+    }
+}

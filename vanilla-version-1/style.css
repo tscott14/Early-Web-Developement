@@ -1,0 +1,244 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #444;
+}
+
+.game-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.game-contents {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    background-color: #353535;
+    border-radius: 1rem;
+
+    width: 95%; 
+    height: 95%;
+}
+
+.col-1, .col-2, .col-3 {
+    flex: 1;
+    height: 96%;
+
+    
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+.col-2 {
+    flex: 2;
+}
+
+/* Beginning of Categories */
+.col-1 .game-cats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.col-1 .game-cats .politics,
+.col-1 .game-cats .economics, 
+.col-1 .game-cats .military {
+    flex: 1;
+    
+    border: black 2px solid;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    margin: 0.25rem;
+    padding: 0.5rem;
+}
+
+.col-1 .game-cats .politics {
+    background-color: rgba(00, 00, 255, 0.6);
+}
+
+.col-1 .game-cats .economics {
+    background-color: rgba(00, 255, 00, 0.6);
+}
+
+.col-1 .game-cats .military {
+    background-color: rgba(255, 00, 00, 0.6);
+}
+
+.col-1 .game-cats h3 {
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+
+    border-bottom: 2px black solid;
+    margin: 0 auto;
+}
+
+/* End of Categories */
+
+/* Beginning of Column-2 */
+
+.col-2 {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+.col-2 .nation-header,
+.col-2 .game-box,
+.col-2 .game-editor {
+    width: 100%;
+
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    margin: 0.25rem auto;
+    padding: 0.5rem;
+}
+
+.col-2 .nation-header {
+    flex: 1;
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    height: 100%;
+}
+
+.col-2 .game-box {
+    flex: 8;
+}
+
+.col-2 .game-editor {
+    flex: 2;
+}
+
+.nation-header .nation-id-display,
+.nation-header .nation-stats-display {
+    display: flex;
+    align-items: center;
+
+    height: 100%;
+    color: white;
+    
+}
+
+.nation-id-display .nation-id-flag-icon,
+.nation-id-display .nation-id-name {
+    margin: 0.5rem;
+}
+
+.nation-id-display .nation-id-flag-icon {
+    background-image: url('images/demo-flag.png');
+    border: 2px black solid;
+    width: 4rem;
+    height: 4rem;
+}
+
+
+.nation-id-display .nation-id-name {
+
+
+    text-align: left;
+    padding: 1rem auto;
+}
+
+.nation-header .nation-stats-display {
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    justify-content: space-between;
+    
+}
+
+.nation-stats-display .stats-rank {
+    width: 30%;
+    text-align: center;
+    margin: 1rem auto;
+}
+
+.stats-rank .rank-number-box {
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 2em;
+}
+
+.stats-rank h4 {
+    font-size: 0.8rem;
+}
+
+.game-box {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#game-surface {
+    width: 100%;
+    border: 1px black solid;
+    border-radius: 0.5rem;
+    margin: 0;
+}
+
+.col-2 .game-editor {
+    border: 2px solid black;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* End of Column-2 */
+
+/* Beginning Column 3*/
+
+.col-3 {
+}
+
+.chat-room {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border: 2px solid rgba(0,0,0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+.chat-room .chat-messages {
+    width: 100%;
+    height: calc(100% - 4rem);
+
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.chat-room .chat-form {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    height: 4rem;
+}
+
+.chat-room .chat-form * {
+    border: none;
+    margin: 0.5rem;
+}
+
+.chat-form input {
+    flex: 3;
+}
+
+.chat-form button {
+    flex: 1;
+}
+/* Ending Column 3*/

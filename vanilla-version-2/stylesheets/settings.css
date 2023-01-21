@@ -1,0 +1,49 @@
+div#settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    border: var(--standard-border);
+
+    text-transform: capitalize;
+}
+
+button {
+    font-weight: bold;
+}
+
+button.side-elem {
+    font-size: 0.9rem;
+}
+
+button.large-elem {
+    width: 100%;
+    height: 2rem;
+    
+    font-size: 1.1rem;
+}
+
+button.fill {
+    flex: 1;
+}
+
+div#settings button {
+    border: none;
+    padding: 0.5rem;
+}
+
+progress {
+    flex: 1;
+}
+
+progress.large-elem {
+    flex: 4;
+}
+
+progress.side-elem {
+    flex: 1;
+}

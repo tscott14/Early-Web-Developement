@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="stylesheets/root.css">
+    <link rel="stylesheet" href="stylesheets/page-layout.css">
+    <link rel="stylesheet" href="stylesheets/settings.css">
+    <link rel="stylesheet" href="stylesheets/catagories-display.css">
+    <link rel="stylesheet" href="stylesheets/catagories-adv-display.css">
+    <link rel="stylesheet" href="stylesheets/nation-header.css">
+    <link rel="stylesheet" href="stylesheets/game-elem.css">
+    <link rel="stylesheet" href="stylesheets/chat-room.css">
+    <link rel="stylesheet" href="stylesheets/general.css">
+    <link rel="stylesheet" href="stylesheets/media.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+
+    <script src="system.js" defer></script>
+    <script src="glmatrix.js" defer></script>
+    <script src="game.js" defer></script>
+    <title>SuperPower 2 Remake</title>
+</head>
+
+<body onload="InitDemo();">
+    <div class="game-container">
+        <div class="col-1">
+            <div id="settings">
+                <div id="main-info-panel">
+                    <div class="selected-sector" id="politic-option">
+                        <h2>Politics</h2>
+                        <div class="fields">
+                            <ul>
+                                <li>
+                                    <div class="main-field">
+                                        <span class="key">constitional form</span>
+                                        <span class="value">Republic</span>
+                                    </div>
+                                    <div class="secondary-field">
+                                        <button class="btn" id="edit-constitution-form">edit</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main-field">
+                                        <span class="key">Laws</span>
+                                        <span class="value"><progress value="40" max="100"></progress></span>
+                                    </div>
+                                    <div class="secondary-field">
+                                        <button class="btn" id="edit-laws-btn">edit internal laws</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main-field">
+                                        <span class="key">approval</span>
+                                        <span class="value">
+                                            <div class="numerical-value">66</div>
+                                        </span>
+                                    </div>
+                                    <div class="secondary-field">
+                                        <progress value="66" max="100"></progress>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main-field">
+                                        <span class="key">stability</span>
+                                        <span class="value">
+                                            <div class="numerical-value">95</div>
+                                        </span>
+                                    </div>
+                                    <div class="secondary-field">
+                                        <progress value="95" max="100"></progress>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="selected-sector" id="economic-option">
+                        <h2>Economics</h2>
+                        <div class="fields">
+                            <ul>
+                                <li>
+                                    <div class="main-field">
+                                        <span class="key">economic model</span>
+                                        <span class="value">Republic</span>
+                                    </div>
+                                    <div class="secondary-field">
+                                        <button class="btn" id="edit-eco-model">edit model</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main-field">
+                                        <span class="key">Laws</span>
+                                        <span class="value">Center</span>
+                                    </div>
+                                    <div class="secondary-field">
+                                        <button class="btn" id="edit-laws-btn">edit internal laws</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main-field">
+                                        <span class="key">approval</span>
+                                        <span class="value">
+                                            <div class="numerical-value">66</div>
+                                        </span>
+                                    </div>
+                                    <div class="secondary-field">
+                                        <progress value="66" max="100"></progress>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main-field">
+                                        <span class="key">stability</span>
+                                        <span class="value">
+                                            <div class="numerical-value">88</div>
+                                        </span>
+                                    </div>
+                                    <div class="secondary-field">
+                                        <progress value="88" max="100"></progress>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="selected-sector" id="military-option">
+                        <h2>Military</h2>
+                        <div class="fields">
+                            <ul>
+                                <li>
+                                    <div class="main-field">
+                                        <span class="key">convential forces</span>
+                                        <span class="value">
+                                            <ul>
+                                                <li id="soldier-row">
+                                                    <span class="sub-key">soldiers</span>
+                                                    <span class="quantity">5555</span>
+                                                    <span class="rank">3</span>
+                                                </li>
+                                                <li id="land-row">
+                                                    <span class="sub-key">land</span>
+                                                    <span class="quantity">222</span>
+                                                    <span class="rank">2</span>
+                                                </li>
+                                                <li id="air-row">
+                                                    <span class="sub-key">air</span>
+                                                    <span class="quantity">12</span>
+                                                    <span class="rank">69</span>
+                                                </li>
+                                                <li id="navel-row">
+                                                    <span class="sub-key">navel</span>
+                                                    <span class="quantity">68</span>
+                                                    <span class="rank">2</span>
+                                                </li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="main-field">
+                                        <span class="key">strategic forces</span>
+                                        <ul>
+                                            <li id="nuke-research">
+                                                <span class="sub-key">research nukes</span>
+                                                <div class="secondary-field">
+                                                    <button class="btn">start</button>
+                                                </div>
+                                                <progress value="6" max="100"></progress>
+                                            </li>
+                                            <li id="nuke-defense">
+                                                <span class="sub-key">missile defense</span>
+                                                <div class="secondary-field">
+                                                    <button class="btn">start</button>
+                                                </div>
+                                                <progress value="12" max="100"></progress>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="sector-selection-buttons">
+                        <button class="sector-option-btn" id="sector-option-pol">Politics</button>
+                        <button class="sector-option-btn" id="sector-option-eco">Economics</button>
+                        <button class="sector-option-btn" id="sector-option-mil">Military</button>
+                    </div>
+                </div>
+                <div id="adv-info-panel">
+                    <p>Later</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="nation-display">
+                <img src="images/typical.png" alt="" srcset="" class="nation-flag">
+                <div class="nation-name">democratic republic of kanadia</div>
+                <ul class="nation-stats">
+                    <li class="nation-stat" id="stats-eco-display">
+                        26
+                    </li>
+                    <li class="nation-stat" id="stats-mil-display">
+                        33
+                    </li>
+                </ul>
+            </div>
+            <div class="game-box">
+                <canvas id="game-surface">
+                    Your browser sucks. Try the Brave browser.
+                </canvas>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="chat-room">
+                <ul class="chat-visability">
+                    <li>
+                        <button class="chat-disp-option-enabled" id="chat-option-player-btn"></button>
+                    </li>
+                    <li>
+                        <button class="chat-disp-option-enabled" id="chat-option-pol-btn"></button>
+                    </li>
+                    <li>
+                        <button class="chat-disp-option-enabled" id="chat-option-eco-btn"></button>
+                    </li>
+                    <li>
+                        <button class="chat-disp-option-enabled" id="chat-option-mil-btn"></button>
+                    </li>
+                </ul>
+                <div class="text-area">
+                    <ul>
+                        <li class="text-area-message player">
+                            <span class="sender">Sheev Palpatine</span>
+                            <span class="message">execute order 66!</span>
+                        </li>
+
+                        <li class="text-area-message player">
+                            <span class="sender">Obiwan</span>
+                            <span class="message">nani</span>
+                        </li>
+
+                        <li class="text-area-message player">
+                            <span class="sender">Anikan</span>
+                            <span class="message">I have always liked children.</span>
+                        </li>
+
+                        <li class="text-area-message server server-politics">
+                            <span class="sender">Server</span>
+                            <span class="message">Bernie Sanders elected president.</span>
+                        </li>
+
+                        <li class="text-area-message server server-economics">
+                            <span class="sender">Server</span>
+                            <span class="message">America suffers from food shortage.</span>
+                        </li>
+
+                        <li class="text-area-message server server-military">
+                            <span class="sender">Server</span>
+                            <span class="message">America invades Mexico stating "we need the resources to
+                                survive!"</span>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="form-area">
+                    <input class="selectable-text" type="text" name="" id="">
+                    <button class="submit-button">Post</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

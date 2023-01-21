@@ -1,0 +1,31 @@
+.game-container {
+    display: flex;
+    flex-direction: row;
+
+    width: 96%;
+    height: 96%;
+}
+
+.col-1, .col-2, .col-3 {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: var(--debug-border);
+}
+
+.col-1 {
+    flex: 2;
+    background-color: var(--bg-color-minor);
+}
+
+.col-2 {
+    flex: 4;
+    background-color: var(--bg-color-minor);
+}
+
+.col-3 {
+    background-color: var(--bg-color-minor);
+}
+

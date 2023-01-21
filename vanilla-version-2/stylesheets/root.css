@@ -1,0 +1,196 @@
+:root {
+    --bg-color-major: #333;
+    --bg-color-minor: #555;
+
+    --text-color: #eee;
+
+    --bg-deep-1: rgba(0, 0, 0, 0.1);
+    --bg-deep-2: rgba(0, 0, 0, 0.3);
+    --bg-deep-3: rgba(0, 0, 0, 0.5);
+    --bg-deep-4: rgba(0, 0, 0, 0.7);
+    --bg-deep-5: rgba(0, 0, 0, 0.9); 
+
+    --bg-light-1: rgba(255, 255, 255, 0.1);
+    --bg-light-2: rgba(255, 255, 255, 0.3);
+    --bg-light-3: rgba(255, 255, 255, 0.5);
+    --bg-light-4: rgba(255, 255, 255, 0.7);
+    --bg-light-5: rgba(255, 255, 255, 0.9);
+
+    --debug-border: 1px solid purple;
+    --standard-border: 1px solid rgba(0, 0, 0, 0.6);
+    --thick-vorder: 2px solid rgba(0, 0, 0, 0.6);
+
+    --cat-plr-rel-strong: rgba(128, 128, 128, 0.9);
+    --cat-pol-rel-strong: rgba(0, 0, 255, 0.9);
+    --cat-eco-rel-strong: rgba(0, 255, 0, 0.9);
+    --cat-mil-rel-strong: rgba(255, 0, 0, 0.9);
+
+    --cat-plr-rel-normal: rgba(255, 255, 255, 0.6);
+    --cat-pol-rel-normal: rgba(0, 0, 255, 0.6);
+    --cat-eco-rel-normal: rgba(0, 255, 0, 0.6);
+    --cat-mil-rel-normal: rgba(255, 0, 0, 0.6);
+
+    --cat-plr-rel-weak: rgba(255, 255, 255, 0.3);
+    --cat-pol-rel-weak: rgba(0, 0, 255, 0.3);
+    --cat-eco-rel-weak: rgba(0, 255, 0, 0.3);
+    --cat-mil-rel-weak: rgba(255, 0, 0, 0.3);
+
+    --cat-plr-rel-hovered: var(--cat-plr-rel-strong);
+    --cat-pol-rel-hovered: var(--cat-pol-rel-strong);
+    --cat-eco-rel-hovered: var(--cat-eco-rel-strong);
+    --cat-mil-rel-hovered: var(--cat-mil-rel-strong);
+
+    --cat-plr-rel-active: var(--cat-plr-rel-weak);
+    --cat-pol-rel-active: var(--cat-pol-rel-weak);
+    --cat-eco-rel-active: var(--cat-eco-rel-weak);
+    --cat-mil-rel-active: var(--cat-mil-rel-weak);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+    margin: 0;
+    padding: 0;
+
+    color: var(--text-color);
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: var(--bg-color-major);
+}
+
+
+
+button:hover {
+    background-color: #555;
+}
+
+button,
+button:active {
+    background-color: #444;
+}
+
+textarea {
+    resize: none;
+}
+
+ul {
+    list-style-type: none;
+    -webkit-padding-start: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+div#settings div.fields {
+    font-size: 0.8rem;
+
+    width: 100%;
+
+    background-color: var(--bg-deep-2);
+}
+
+div#settings div.fields > div.element {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.25em 0.25em;
+}
+
+div#settings div.fields > div.element:nth-child(odd) {
+    background-color: var(--bg-deep-1);
+}
+
+div#settings div.fields > div.element > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    width: 100%;
+
+    margin: 0.15em;
+}
+
+div#settings div.fields > div.element > div > * {
+
+
+    margin: 0 0.25em;
+}
+
+div#settings div.fields > div.element > div h3{
+    font-size: 0.9rem;
+
+}
+
+div#settings div.fields > div.element > div h4{
+    font-size: 0.85rem;
+}
+
+div#settings div.fields > div.element > div h5{
+    font-size: 0.8rem;
+}
+
+div.element-table {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+
+}
+
+div.element-table > div.table-entry {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    max-width: 100%;
+
+    background-color: var(--bg-deep-2);
+
+    padding: 0.1em 1em;
+}
+
+div.element-table > div.table-entry.header {
+    text-transform: uppercase;
+}
+
+div.element-table > div.table-entry:nth-child(odd) {
+    background-color: var(--bg-deep-1);
+}
+
+div.element-table > div.table-entry > * {
+    width: auto;
+}
+
+div.element-table > div.table-entry > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+[hidden] {
+    display: none !important;
+}

@@ -1,0 +1,124 @@
+div#main-info-panel {
+    flex: 1;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    margin: 0.25rem;
+    padding: 0.25rem;
+
+    width: 100%;
+}
+
+div#main-info-panel > div.selected-sector {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    text-align: center;
+    
+    width: 100%;
+    height: 100%;
+
+    padding: 0.5rem;
+}
+
+div#main-info-panel > div.selected-sector#politic-option {
+    background-color: var(--cat-pol-rel-weak);
+}
+
+div#main-info-panel > div.selected-sector#economic-option {
+    background-color: var(--cat-eco-rel-weak);
+}
+
+div#main-info-panel > div.selected-sector#military-option {
+    background-color: var(--cat-mil-rel-weak);
+}
+
+div#main-info-panel > div.selected-sector > h2 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid white;
+    
+    padding: 0 2rem;
+    margin-bottom: 0.25rem;
+}
+
+
+
+/* bottom sector selection buttons */
+div#main-info-panel > div#sector-selection-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+}
+
+div#sector-selection-buttons > button.sector-option-btn {
+    font-weight: bold;
+    
+    flex: 1;
+    
+    padding: 0.2em;
+}
+
+div#sector-selection-buttons > button.sector-option-btn#sector-option-pol:hover {
+    background-color: var(--cat-pol-rel-hovered);
+}
+
+div#sector-selection-buttons > button.sector-option-btn#sector-option-eco:hover {
+    background-color: var(--cat-eco-rel-hovered);
+}
+
+div#sector-selection-buttons > button.sector-option-btn#sector-option-mil:hover {
+    background-color: var(--cat-mil-rel-hovered);
+}
+
+div#sector-selection-buttons > button.sector-option-btn#sector-option-pol,
+div#sector-selection-buttons > button.sector-option-btn#sector-option-pol:active {
+    background-color: var(--cat-pol-rel-active);
+}
+
+div#sector-selection-buttons > button.sector-option-btn#sector-option-eco,
+div#sector-selection-buttons > button.sector-option-btn#sector-option-eco:active {
+    background-color: var(--cat-eco-rel-active);
+}
+
+div#sector-selection-buttons > button.sector-option-btn#sector-option-mil,
+div#sector-selection-buttons > button.sector-option-btn#sector-option-mil:active {
+    background-color: var(--cat-mil-rel-active);
+}
+
+/* end of selection buttons */
+
+/* Advanced options styles */
+
+#adv-info-panel {
+    flex: 1;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    margin: 0.25rem;
+    padding: 0.25rem;
+
+    width: 100%;
+
+    overflow-y: auto;
+}
+
+div#adv-info-panel > div.selected-sector-exp-option > h2 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid white;
+    
+    padding: 0 2rem;
+    margin-bottom: 0.25rem;
+}
+
+/* End of Advanced styles */

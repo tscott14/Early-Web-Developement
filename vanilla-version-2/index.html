@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="stylesheets/root.css">
+    <link rel="stylesheet" href="stylesheets/page-layout.css">
+    <link rel="stylesheet" href="stylesheets/settings.css">
+    <link rel="stylesheet" href="stylesheets/catagories-display.css">
+    <link rel="stylesheet" href="stylesheets/catagories-adv-display.css">
+    <link rel="stylesheet" href="stylesheets/nation-header.css">
+    <link rel="stylesheet" href="stylesheets/game-elem.css">
+    <link rel="stylesheet" href="stylesheets/chat-room.css">
+    <link rel="stylesheet" href="stylesheets/general.css">
+    <link rel="stylesheet" href="stylesheets/media.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+
+    <script src="system.js" defer></script>
+    <script src="glmatrix.js" defer></script>
+    <script src="game.js" defer></script>
+    <title>SuperPower 2 Remake</title>
+</head>
+
+<body onload="InitDemo();">
+    <div class="game-container">
+        <div class="col-1">
+            <div id="settings">
+                <div id="main-info-panel">
+                    <div class="selected-sector" id="politic-option">
+                        <h2>Politics</h2>
+                        <div class="fields">
+                            <div class="element">
+                                <div>
+                                    <h3>constitutional form</h3>
+                                    <h4>constitutional republic</h4>
+                                </div>
+                                <div>
+                                    <button class="btn large-elem">change constitution</button>
+                                </div>
+                            </div>
+                            <div class="element">
+                                <div>
+                                    <h3>laws</h3>
+                                    <button class="side-elem">internal-laws</button>
+                                </div>
+                                <div>
+                                    <progress value="95" max="100" class="large-elem"></progress>
+                                </div>
+                                <div>
+                                    <h5>right</h5>
+                                    <h5>left</h5>
+
+                                </div>
+                            </div>
+                            <div class="element">
+                                <div>
+                                    <h3>approval</h3>
+                                    <div>
+                                        <label for="approval-progress-bar">60%</label>
+                                        <progress id="approval-progress-bar" value="60" max="100"
+                                            class="side-elem"></progress>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="element">
+                                <div>
+                                    <h3>stability</h3>
+                                    <div>
+                                        <label for="stability-progress-bar">40%</label>
+                                        <progress id="stability-progress-bar" value="40" max="100"></progress>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="element">
+                                <div>
+                                    <h3>corruption</h3>
+                                    <div>
+                                        <label for="corruption-progress-bar">10%</label>
+                                        <progress id="corruption-progress-bar" value="10" max="100"></progress>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="selected-sector" id="economic-option">
+                        <h2>Economics</h2>
+                        <div class="fields">
+                            <div class="element">
+                                <div>
+                                    <h3>Economic model</h3>
+                                    <button class="side-elem">edit</button>
+                                </div>
+                                <div>
+                                    <progress value="95" max="100" class="large-elem"></progress>
+                                </div>
+                                <div>
+                                    <h5>state controled</h5>
+                                    <h5>free market</h5>
+                                </div>
+                            </div>
+                            <div class="element">
+                                <div>
+                                    <h3>Economic health</h3>
+                                    <h4>77%</h4>
+                                </div>
+                                <div>
+                                    <progress value="77" max="100" class="large-elem"></progress>
+                                </div>
+                            </div>
+                            <div class="element">
+                                <div>
+                                    <h3>budget</h3>
+                                    <button class="side-elem">edit</button>
+                                </div>
+                                <div>
+                                    <div class="element-table">
+                                        <div class="table-entry header">
+                                            <h4>Field</h4>
+                                            <h5>Amount</h5>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>income</h4>
+                                            <h5>$6000</h5>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>expense</h4>
+                                            <h5>$8000</h5>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>balance</h4>
+                                            <h5>$-2000</h5>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>avalible</h4>
+                                            <h5>$10600</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="selected-sector" id="military-option">
+                        <h2>Military</h2>
+                        <div class="fields">
+                            <div class="element">
+                                <div>
+                                    <h3>conventional forces</h3>
+                                    <button class="side-elem">edit</button>
+                                </div>
+                                <div>
+                                    <div class="element-table">
+                                        <div class="table-entry header">
+                                            <h4>Field</h4>
+                                            <div>
+                                                <h5>Quantity</h5>
+                                                <h5>Rank</h5>
+                                            </div>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>soldier</h4>
+                                            <div>
+                                                <h5>2,000</h5>
+                                                <h5>76th</h5>
+                                            </div>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>land</h4>
+
+                                            <div>
+                                                <h5>200</h5>
+                                                <h5>7th</h5>
+                                            </div>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>air</h4>
+                                            <div>
+                                                <h5>20</h5>
+                                                <h5>43rd</h5>
+                                            </div>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>navel</h4>
+                                            <div>
+                                                <h5>25</h5>
+                                                <h5>12th</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button id="research" class="fill">research</button>
+                                    <button id="build" class="fill">build</button>
+                                </div>
+                            </div>
+                            <div class="element">
+                                <div>
+                                    <h3>strategic forces</h3>
+                                    <h5>0 missiles</h5>
+                                </div>
+                                <div>
+
+                                    <div class="element-table">
+                                        <div class="table-entry">
+                                            <h4>attack missiles</h4>
+                                            <button id="initialize-attack-missile-system">create</button>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>missile defense system</h4>
+                                            <button id="initialize-defense-missile-system">create</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="sector-selection-buttons">
+                        <button class="sector-option-btn" id="sector-option-pol">Politics</button>
+                        <button class="sector-option-btn" id="sector-option-eco">Economics</button>
+                        <button class="sector-option-btn" id="sector-option-mil">Military</button>
+                    </div>
+                </div>
+                <div id="adv-info-panel">
+                    <div class="selected-sector-exp-option" id="change-constitution-option">
+                        <h2>Change constitution</h2>
+                        <div class="fields">
+                            <div class="element">
+                                <div>
+                                    <h3>form</h3>
+                                    <select name="" id="constitutional-form">
+                                        <option value="republic">Democratic Republic</option>
+                                        <option value="monarchy">Monarchy</option>
+                                        <option value="communism">Communism</option>
+                                        <option value="facism">Facism</option>
+                                        <option value="theocracy">Theoarchy</option>
+                                        <option value="mil-dictatorship">Military Dictatorship</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="element">
+                                <div>
+                                    <h3>capital</h3>
+                                    <select name="" id="constitutional-capital">
+                                        <option value="washingtondc">Washington D.C.</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <button class="btn large-elem" id="confirm-constitution-change-btn">confirm
+                                        changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="selected-sector-exp-option" id="internal-laws-option">
+                        <h2>Internal laws</h2>
+                        <div class="fields">
+                            <div class="element">
+                                <div>
+                                    <div class="element-table">
+                                        <div class="table-entry header">
+                                            <h4>Religion</h4>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>Christianity</h4>
+                                            <select name="" class="legal-status" id="">
+                                                <option value="offical">offical</option>
+                                                <option value="legal">Legal</option>
+                                                <option value="illegal">Illegal</option>
+                                            </select>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>Islam</h4>
+                                            <select name="" class="legal-status" id="">
+                                                <option value="offical">offical</option>
+                                                <option value="legal">Legal</option>
+                                                <option value="illegal">Illegal</option>
+                                            </select>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>Hinduism</h4>
+                                            <select name="" class="legal-status" id="">
+                                                <option value="offical">offical</option>
+                                                <option value="legal">Legal</option>
+                                                <option value="illegal">Illegal</option>
+                                            </select>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>Judaism</h4>
+                                            <select name="" class="legal-status" id="">
+                                                <option value="offical">offical</option>
+                                                <option value="legal">Legal</option>
+                                                <option value="illegal">Illegal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- </div>
+                                <div> -->
+                                    <div class="element-table">
+                                        <div class="table-entry header">
+                                            <h4>Language</h4>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>English</h4>
+                                            <select name="" class="legal-status" id="">
+                                                <option value="offical">offical</option>
+                                                <option value="legal">Legal</option>
+                                                <option value="illegal">Illegal</option>
+                                            </select>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>Spanish</h4>
+                                            <select name="" class="legal-status" id="">
+                                                <option value="offical">offical</option>
+                                                <option value="legal">Legal</option>
+                                                <option value="illegal">Illegal</option>
+                                            </select>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>Japanese</h4>
+                                            <select name="" class="legal-status" id="">
+                                                <option value="offical">offical</option>
+                                                <option value="legal">Legal</option>
+                                                <option value="illegal">Illegal</option>
+                                            </select>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>French</h4>
+                                            <select name="" class="legal-status" id="">
+                                                <option value="offical">offical</option>
+                                                <option value="legal">Legal</option>
+                                                <option value="illegal">Illegal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="element">
+                                <div>
+                                    <div class="element-table">
+                                        <div class="table-entry header">
+                                            <h4>Laws</h4>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>Freedom of Speech</h4>
+                                            <select name="" class="legal-status" id="">
+                                                <option value="offical">offical</option>
+                                                <option value="legal">Legal</option>
+                                                <option value="illegal">Illegal</option>
+                                            </select>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>Freedom of Expression</h4>
+                                            <select name="" class="legal-status" id="">
+                                                <option value="offical">offical</option>
+                                                <option value="legal">Legal</option>
+                                                <option value="illegal">Illegal</option>
+                                            </select>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>Freedom of Religion</h4>
+                                            <select name="" class="legal-status" id="">
+                                                <option value="offical">offical</option>
+                                                <option value="legal">Legal</option>
+                                                <option value="illegal">Illegal</option>
+                                            </select>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>Abortion</h4>
+                                            <select name="" class="legal-status" id="">
+                                                <option value="offical">offical</option>
+                                                <option value="legal">Legal</option>
+                                                <option value="illegal">Illegal</option>
+                                            </select>
+                                        </div>
+                                        <div class="table-entry">
+                                            <h4>Contraception</h4>
+                                            <select name="" class="legal-status" id="">
+                                                <option value="offical">offical</option>
+                                                <option value="legal">Legal</option>
+                                                <option value="illegal">Illegal</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="element">
+                                <div>
+                                    <h4>immagration</h4>
+                                    <select name="" class="legal-status" id="">
+                                        <option value="legal">open</option>
+                                        <option value="illegal">closed</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <h4>emmigration</h4>
+                                    <select name="" class="legal-status" id="">
+                                        <option value="legal">open</option>
+                                        <option value="illegal">closed</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="element">
+                                <div>
+                                    <button class="fill">Save and exit</button>
+                                    <button>cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="selected-sector-exp-option" id="eco-model-option">
+                        <h4>Economic Model</h4>
+                        <div class="fields">
+                            <div class="element">
+                                <div>
+                                    <div class="element-table">
+                                        <div class="table-entry header">
+                                            <h4>exchange market</h4>
+                                        </div>
+                                        <div class="table-entry">
+                                            
+                                        </div>
+                                        <div class="table-entry">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="selected-sector-exp-option" id="bidget-option">
+
+                    </div>
+                    <div class="selected-sector-exp-option" id="coventional-forces-option">
+
+                    </div>
+                    <div class="selected-sector-exp-option" id="research-option">
+
+                    </div>
+                    <div class="selected-sector-exp-option" id="build-option">
+
+                    </div>
+                    <div class="selected-sector-exp-option" id="attack-missile-confirmation-option">
+
+                    </div>
+                    <div class="selected-sector-exp-option" id="defense-missile-confirmation-option">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="nation-display">
+                <img src="images/typical.png" alt="" srcset="" class="nation-flag">
+                <div class="nation-name">democratic republic of kanadia</div>
+                <ul class="nation-stats">
+                    <li class="nation-stat" id="stats-pol-display">
+                        13
+                    </li>
+                    <li class="nation-stat" id="stats-eco-display">
+                        26
+                    </li>
+                    <li class="nation-stat" id="stats-mil-display">
+                        33
+                    </li>
+                </ul>
+            </div>
+            <div class="game-box">
+                <canvas id="game-surface">
+                    Your browser sucks. Try the Brave browser.
+                </canvas>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="chat-room">
+                <ul class="chat-visability">
+                    <li>
+                        <button class="chat-disp-option-enabled" id="chat-option-player-btn"></button>
+                    </li>
+                    <li>
+                        <button class="chat-disp-option-enabled" id="chat-option-pol-btn"></button>
+                    </li>
+                    <li>
+                        <button class="chat-disp-option-enabled" id="chat-option-eco-btn"></button>
+                    </li>
+                    <li>
+                        <button class="chat-disp-option-enabled" id="chat-option-mil-btn"></button>
+                    </li>
+                </ul>
+                <div class="text-area">
+                    <ul>
+                        <li class="text-area-message player">
+                            <span class="sender">Sheev Palpatine</span>
+                            <span class="message">execute order 66!</span>
+                        </li>
+
+                        <li class="text-area-message player">
+                            <span class="sender">Obiwan</span>
+                            <span class="message">nani</span>
+                        </li>
+
+                        <li class="text-area-message player">
+                            <span class="sender">Anikan</span>
+                            <span class="message">I have always liked children.</span>
+                        </li>
+
+                        <li class="text-area-message server server-politics">
+                            <span class="sender">Server</span>
+                            <span class="message">Bernie Sanders elected president.</span>
+                        </li>
+
+                        <li class="text-area-message server server-economics">
+                            <span class="sender">Server</span>
+                            <span class="message">America suffers from food shortage.</span>
+                        </li>
+
+                        <li class="text-area-message server server-military">
+                            <span class="sender">Server</span>
+                            <span class="message">America invades Mexico stating "we need the resources to
+                                survive!"</span>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="form-area">
+                    <input class="selectable-text" type="text" name="" id="">
+                    <button class="submit-button">Post</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
